@@ -34,13 +34,13 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // 🔥 Classe reutilizável para botões com borda animada
   const buttonClass =
     "relative flex items-center gap-2 px-4 py-2 rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-600 \
      before:absolute before:inset-0 before:rounded-md before:border-2 before:border-transparent \
      before:bg-[length:200%_200%] before:bg-gradient-to-r before:from-pink-500 before:via-yellow-500 before:to-blue-500 \
      before:animate-border-move before:opacity-0 before:transition-opacity before:duration-300 \
-     hover:before:opacity-100 overflow-hidden";
+     hover:before:opacity-100 overflow-hidden \
+     text-sm md:text-base px-2 md:px-4 py-1 md:py-2 gap-1 md:gap-2";
 
   return (
     <nav className={`${bgColor} shadow-md px-6 py-4`}>
@@ -79,16 +79,20 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Menu mobile */}
-      {isOpen && (
-        <div className="flex flex-col gap-2 mt-4 md:hidden">
+      {/* Menu mobile com transição suave */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="flex flex-col gap-2 mt-4">
           <DelayedLink
             to="/"
             className={buttonClass}
             onClick={() => setIsOpen(false)}
           >
-            <span className="relative z-10 flex items-center gap-2">
-              <FaBookOpen /> Início
+            <span className="relative z-10 flex items-center gap-1 md:gap-2">
+              <FaBookOpen className="text-sm md:text-base" /> Início
             </span>
           </DelayedLink>
           <DelayedLink
@@ -96,8 +100,8 @@ const Navbar: React.FC = () => {
             className={buttonClass}
             onClick={() => setIsOpen(false)}
           >
-            <span className="relative z-10 flex items-center gap-2">
-              <FaUser /> Sobre
+            <span className="relative z-10 flex items-center gap-1 md:gap-2">
+              <FaUser className="text-sm md:text-base" /> Sobre
             </span>
           </DelayedLink>
           <DelayedLink
@@ -105,8 +109,8 @@ const Navbar: React.FC = () => {
             className={buttonClass}
             onClick={() => setIsOpen(false)}
           >
-            <span className="relative z-10 flex items-center gap-2">
-              <FaHandsHelping /> Serviços
+            <span className="relative z-10 flex items-center gap-1 md:gap-2">
+              <FaHandsHelping className="text-sm md:text-base" /> Serviços
             </span>
           </DelayedLink>
           <DelayedLink
@@ -114,12 +118,12 @@ const Navbar: React.FC = () => {
             className={buttonClass}
             onClick={() => setIsOpen(false)}
           >
-            <span className="relative z-10 flex items-center gap-2">
-              <FaEnvelope /> Contato
+            <span className="relative z-10 flex items-center gap-1 md:gap-2">
+              <FaEnvelope className="text-sm md:text-base" /> Contato
             </span>
           </DelayedLink>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

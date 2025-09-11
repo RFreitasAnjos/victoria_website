@@ -10,7 +10,16 @@ import Home from "../src/pages/Home";
 import Sobre from "../src/pages/Sobre";
 import Servicos from "../src/pages/Servicos";
 import Contato from "../src/pages/Contato";
+import Login from "../src/pages/Login";
+import Register from "./pages/Register";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
+import UserProfile from "./pages/UserProfile";
+import Error from "./pages/Error";
+import RecoveryPassword from "./pages/RecoveryPassword";
+import ResetPassword from "./pages/ResetPassword";
+import MarketPlace from "./pages/MarketPlace";
+import DescribeMaterial from "./pages/DescribeMaterial";
+import MaterialScreen from "./pages/materialScreen";
 
 function App() {
   useEffect(() => {
@@ -26,6 +35,15 @@ function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/error" element={<Error />} />
+          <Route path="/forgot-password" element={<RecoveryPassword />} />
+          <Route path="/reset_password" element={<ResetPassword />} />
+          <Route path="/marketplace" element={<MarketPlace />} />
+          <Route path="/describe_material" element={<DescribeMaterial />} />
+          <Route path="/material" element={<MaterialScreen />} />
         </Routes>
         <WhatsAppFloatingButton />
       </main>
