@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`${bgColor} shadow-md px-6 py-4`}>
       <div className="flex items-center justify-between">
-        <a href="/" className="flex items-center">
+        <a href="https://rfreitasanjos.github.io/victoria_website/" className="flex items-center">
           <img src={logo} alt="logo" className="w-24" />
         </a>
 
