@@ -7,7 +7,7 @@ import { TransitionProvider } from "./context/TransitionContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/victoria_website">
       <TransitionProvider>
         <App />
       </TransitionProvider>
