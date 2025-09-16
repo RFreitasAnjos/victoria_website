@@ -5,7 +5,7 @@ import { FaBook, FaChalkboardTeacher, FaHeart, FaPuzzlePiece, FaSmile, FaGraduat
 const Sobre = () => {
   return (
     <PageContainer>
-      <section data-aos="fade-up" className=" bg-gradient-to-b from-blue-100 to-white min-h-screen p-6 sm:p-8 md:p-12">
+      <section data-aos="fade-up" className="bg-gradient-to-b from-blue-100 to-white min-h-screen p-6 sm:p-8 md:p-12">
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-700 mb-6 text-center md:text-left">
             Contato

@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
   );
   const [bgColor, setBgColor] = useState<string>("bg-blue-500");
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     if (location.pathname === "/servicos") {
@@ -42,10 +43,18 @@ const Navbar: React.FC = () => {
      hover:before:opacity-100 overflow-hidden \
      text-sm md:text-base px-2 md:px-4 py-1 md:py-2 gap-1 md:gap-2";
 
+  const handleLoginClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2500);
+  };
+
   return (
     <nav className={`${bgColor} shadow-md px-6 py-4`}>
       <div className="flex items-center justify-between">
-        <img src={logo} alt="logo" className="w-24" />
+        <a href="/" className="flex items-center">
+          <img src={logo} alt="logo" className="w-24" />
+        </a>
 
         {/* Menu desktop */}
         <div className="hidden md:flex gap-4">
@@ -69,6 +78,17 @@ const Navbar: React.FC = () => {
               <FaEnvelope /> Contato
             </span>
           </DelayedLink>
+          <DelayedLink
+            to="/login"
+            className={`${buttonClass} cursor-not-allowed opacity-60`}
+            onClick={handleLoginClick}
+            tabIndex={-1}
+            aria-disabled="true"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              <FaUser /> Login
+            </span>
+          </DelayedLink>
         </div>
 
         {/* Botão hamburger mobile */}
@@ -81,9 +101,8 @@ const Navbar: React.FC = () => {
 
       {/* Menu mobile com transição suave */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="flex flex-col gap-2 mt-4">
           <DelayedLink
@@ -122,8 +141,26 @@ const Navbar: React.FC = () => {
               <FaEnvelope className="text-sm md:text-base" /> Contato
             </span>
           </DelayedLink>
+          <DelayedLink
+            to="/login"
+            className={`${buttonClass} cursor-not-allowed opacity-60`}
+            onClick={handleLoginClick}
+            tabIndex={-1}
+            aria-disabled="true"
+          >
+            <span className="relative z-10 flex items-center gap-1 md:gap-2">
+              <FaUser className="text-sm md:text-base" /> Login
+            </span>
+          </DelayedLink>
         </div>
       </div>
+
+      {/* Toast para login (exibição temporária) */}
+      {showToast && (
+        <div className="fixed top-6 right-6 bg-yellow-400 text-gray-900 px-4 py-2 rounded shadow-lg z-50 animate-fade-in">
+          Funcionalidade ainda não disponível!
+        </div>
+      )}
     </nav>
   );
 };

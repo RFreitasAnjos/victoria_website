@@ -49,7 +49,7 @@ function Footer() {
         <FaHeart className="inline text-red-500" /> por{" "}
         <a
           href="https://rfreitasanjos.github.io/meu-portifolio/"
-          className="font-bold hover:text-blue-400 transition-colors"
+          className="font-bold animate-pulse text-white hover:text-blue-400 transition-colors"
         >
           Renan Freitas
         </a>{" "}

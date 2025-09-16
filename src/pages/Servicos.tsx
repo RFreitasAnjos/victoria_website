@@ -50,16 +50,16 @@ const Servicos = () => {
             </thead>
             <tbody>
               <tr className="hover:bg-red-100 transition">
-                <td className="border px-4 py-2">Correção de Trabalhos</td>
+                <td className="border px-4 py-2">Avaliação e orientação de trabalhos acadêmicos</td>
                 <td className="border px-4 py-2">A partir de R$ 40,00/h</td>
               </tr>
               <tr className="hover:bg-red-100 transition">
-                <td className="border px-4 py-2">Roteiro de Apresentação</td>
+                <td className="border px-4 py-2">Produção de roteiro para apresentações</td>
                 <td className="border px-4 py-2">A partir de R$ 50,00/h</td>
               </tr>
               <tr className="hover:bg-red-100 transition">
                 <td className="border px-4 py-2">Slides Profissionais</td>
-                <td className="border px-4 py-2">R$ 100,00 *</td>
+                <td className="border px-4 py-2">A partir de R$ 50,00*</td>
               </tr>
             </tbody>
           </table>
