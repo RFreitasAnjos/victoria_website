@@ -14,7 +14,7 @@ const Error = () => {
           Desculpe, a página que você está procurando não existe ou foi movida.
         </p>
         <Link
-          to="/"
+          to="/home"
           className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
         >
           Voltar para Início

@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
 
         {/* Menu desktop */}
         <div className="hidden md:flex gap-4">
-          <DelayedLink to="/" className={buttonClass}>
+          <DelayedLink to="/home" className={buttonClass}>
             <span className="relative z-10 flex items-center gap-2">
               <FaBookOpen /> Início
             </span>
@@ -106,7 +106,7 @@ const Navbar: React.FC = () => {
       >
         <div className="flex flex-col gap-2 mt-4">
           <DelayedLink
-            to="/"
+            to="/home"
             className={buttonClass}
             onClick={() => setIsOpen(false)}
           >
